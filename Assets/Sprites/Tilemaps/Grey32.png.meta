@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 342386dde7380404f9855df334151912
+guid: 23831af6cc68b674cafe1944fa612f10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3666641923493797846
-    second: TabbyCat - Copy_0
+      213: 2520858369628849378
+    second: Grey32_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TabbyCat - Copy_0
+      name: Grey32_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6df1768176782e230800000000000000
-      internalID: 3666641923493797846
+      spriteID: 2e44cc2c453ebf220800000000000000
+      internalID: 2520858369628849378
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TabbyCat - Copy_0: 3666641923493797846
+      Grey32_0: 2520858369628849378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

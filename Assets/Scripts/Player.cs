@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    /* Known Bug: every other jump, the player enters Idle anim, during the jump. Haven't been able to figure out the cause, yet */
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -77,7 +78,7 @@ public class Player : MonoBehaviour
 
     private void HandleJump()
     {
-        if(jumpPressed && isGrounded)
+        if (jumpPressed && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpPressed = false;

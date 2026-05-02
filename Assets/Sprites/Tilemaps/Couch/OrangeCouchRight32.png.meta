@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 342386dde7380404f9855df334151912
+guid: 5a19e4c83cd323d43a912d7fc02b8e37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3666641923493797846
-    second: TabbyCat - Copy_0
+      213: 6320113997750148804
+    second: OrangeCouchRight32_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TabbyCat - Copy_0
+      name: OrangeCouchRight32_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6df1768176782e230800000000000000
-      internalID: 3666641923493797846
+      spriteID: 4ce1fdf023e85b750800000000000000
+      internalID: 6320113997750148804
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TabbyCat - Copy_0: 3666641923493797846
+      OrangeCouchRight32_0: 6320113997750148804
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
