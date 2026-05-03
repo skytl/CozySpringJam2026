@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: RedCushionLeft
+  m_Name: OrangeCushionL
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 21300000, guid: c8dca26b3b7bfcd42b1f90913930578e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 26937df40c6c1f44aaac7210a9e13a98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

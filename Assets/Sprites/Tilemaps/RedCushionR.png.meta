@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 60b14c95b4a87f843a852b9fae105b53
+guid: 25f8bca77208a674bbda824c6e214d72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3332322491529456835
-    second: OrangeCushionRight_0
+      213: 1404985457669715837
+    second: RedCushionR_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OrangeCushionRight_0
+      name: RedCushionR_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d33975f695631c1d0800000000000000
-      internalID: -3332322491529456835
+      spriteID: d773efe64d28f7310800000000000000
+      internalID: 1404985457669715837
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      OrangeCushionRight_0: -3332322491529456835
+      RedCushionR_0: 1404985457669715837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
