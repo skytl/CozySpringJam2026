@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 517e55323c4b48241b01cea8555cfc22
+guid: 8022fc8cb8b6176428aa260b77c33fdc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2885200242274844122
-    second: BackgroundTransflag_0
+      213: 6911002022485900212
+    second: BackgroundTransflag2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackgroundTransflag_0
+      name: BackgroundTransflag2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 287
         y: 247
-        width: 960
+        width: 258
         height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62246558aa5b5f7d0800000000000000
-      internalID: -2885200242274844122
+      spriteID: 4bb374039bfc8ef50800000000000000
+      internalID: 6911002022485900212
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackgroundTransflag_0: -2885200242274844122
+      BackgroundTransflag2_0: 6911002022485900212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
