@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
     /* Known Bug: every other jump, the player enters Idle anim, during the jump. Haven't been able to figure out the cause, yet */
 
     // EXPERIMENTING!!
-    public ItemSO itemSO;
+    //public ItemSO itemSO;
     public SpriteRenderer sr;
-    public int sortingOrder;
+    // public int sortingOrder;
 
     [Header("Components")]
     public Rigidbody2D rb;

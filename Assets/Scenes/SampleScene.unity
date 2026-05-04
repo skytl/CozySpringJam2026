@@ -6323,6 +6323,88 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &649246475
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1857714981}
+    m_Modifications:
+    - target: {fileID: 1400850090278758420, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Name
+      value: Shrimp Treat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a9cc78087c3a0d4ea002b495b7463c9, type: 3}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002012420584978502, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: be78c3b4ff0dcb14fbf3ff119d391a3f, type: 2}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+--- !u!4 &649246476 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+  m_PrefabInstance: {fileID: 649246475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &655037639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8855,9 +8937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06334d560279d0541bc7d462865cd261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  itemSO: {fileID: 11400000, guid: be78c3b4ff0dcb14fbf3ff119d391a3f, type: 2}
   sr: {fileID: 1511203992}
-  sortingOrder: 0
   rb: {fileID: 1143381089}
   playerInput: {fileID: 1143381091}
   anim: {fileID: 1569514176}
@@ -11617,6 +11697,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 602264123}
+  - {fileID: 649246476}
   - {fileID: 1080354969}
   - {fileID: 98159597}
   - {fileID: 2042512528}
