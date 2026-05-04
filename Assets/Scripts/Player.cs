@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     // EXPERIMENTING!!
     public ItemSO itemSO;
     public SpriteRenderer sr;
+    public int sortingOrder;
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -113,13 +114,7 @@ public class Player : MonoBehaviour
     {
         if (shiftPressed)
         {
-            if (itemSO == null)
-                return;
-
-            // Experimenting
-            // Hide button
-            itemSO.sr.transform.localScale = new Vector3(0, 0, 0);
-
+            sr.enabled = false;
 
             Debug.Log("Yo, this is trippy!");
             shiftPressed = false;

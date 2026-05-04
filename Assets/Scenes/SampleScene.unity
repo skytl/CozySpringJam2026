@@ -5216,7 +5216,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -5226,7 +5226,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -5256,7 +5256,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -5423,9 +5423,6 @@ Tilemap:
   - serializedVersion: 2
     m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 4f79523a1c8b8684e8c54d5da265b911, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 3
-    m_Data: {fileID: 1084681665}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 426
@@ -8858,8 +8855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06334d560279d0541bc7d462865cd261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  itemSO: {fileID: 0}
-  sr: {fileID: 0}
+  itemSO: {fileID: 11400000, guid: be78c3b4ff0dcb14fbf3ff119d391a3f, type: 2}
+  sr: {fileID: 1511203992}
+  sortingOrder: 0
   rb: {fileID: 1143381089}
   playerInput: {fileID: 1143381091}
   anim: {fileID: 1569514176}
@@ -9066,6 +9064,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: df1c0296d6b853d42a0fbe1bdcb5d851, type: 3}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -10575,6 +10589,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494999859}
   m_CullTransparentMesh: 1
+--- !u!212 &1511203992 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1565443780921419124, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
+  m_PrefabInstance: {fileID: 3445173480853972689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1538539253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8972953076825827111, guid: bbafaab3475752541a1a4a7df8714977, type: 3}
