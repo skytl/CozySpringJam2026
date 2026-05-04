@@ -5,8 +5,17 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    /* #1, set a boolean, that tracks whether JungleMode is false or true (default is false);
+     * when playerInput == shift key, set JungleMode to true;
+     * 
+     */
+
 
     /* Known Bug: every other jump, the player enters Idle anim, during the jump. Haven't been able to figure out the cause, yet */
+
+    // EXPERIMENTING!!
+    public ItemSO itemSO;
+    public SpriteRenderer sr;
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -29,6 +38,8 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;
     private bool jumpPressed;
     private bool jumpReleased;
+    private bool shiftPressed;
+    private bool shiftReleased;
 
 
     [Header("Ground Check")]
@@ -63,6 +74,7 @@ public class Player : MonoBehaviour
         CheckGrounded();
         HandleMovement();
         HandleJump();
+        HandleShiftReality();
     }
 
 
@@ -92,6 +104,31 @@ public class Player : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
             }
             jumpReleased = false;
+        }
+    }
+
+
+
+    private void HandleShiftReality()
+    {
+        if (shiftPressed)
+        {
+            if (itemSO == null)
+                return;
+
+            // Experimenting
+            // Hide button
+            itemSO.sr.transform.localScale = new Vector3(0, 0, 0);
+
+
+            Debug.Log("Yo, this is trippy!");
+            shiftPressed = false;
+            shiftReleased = false;
+        }
+        if (shiftReleased)
+        {
+            Debug.Log("Meh, I've seen this before.");
+            shiftReleased = false;
         }
     }
 
@@ -172,6 +209,23 @@ public class Player : MonoBehaviour
         else
         {
             jumpReleased = true;
+
+        }
+
+    }
+
+
+
+    public void OnShiftReality(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            shiftPressed = true;
+            shiftReleased = false;
+        }
+        else
+        {
+            shiftReleased = true;
 
         }
 

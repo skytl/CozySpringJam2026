@@ -5216,7 +5216,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 4294967295
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -5226,7 +5226,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 4294967295
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -5256,7 +5256,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 4294967295
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -5423,6 +5423,9 @@ Tilemap:
   - serializedVersion: 2
     m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 4f79523a1c8b8684e8c54d5da265b911, type: 3}
+  - serializedVersion: 2
+    m_RefCount: 3
+    m_Data: {fileID: 1084681665}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 426
@@ -8855,6 +8858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06334d560279d0541bc7d462865cd261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  itemSO: {fileID: 0}
+  sr: {fileID: 0}
   rb: {fileID: 1143381089}
   playerInput: {fileID: 1143381091}
   anim: {fileID: 1569514176}

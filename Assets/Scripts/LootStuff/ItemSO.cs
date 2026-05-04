@@ -12,4 +12,8 @@ public class ItemSO : ScriptableObject
     [Header("Stats")]
     public int itemPoints;
 
+
+    // Experimenting
+    public SpriteRenderer sr;
+
 }
