@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,10 +116,10 @@ TextureImporter:
       name: CatSprite_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 8
-        width: 19
-        height: 16
+        x: 0
+        y: 0
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
