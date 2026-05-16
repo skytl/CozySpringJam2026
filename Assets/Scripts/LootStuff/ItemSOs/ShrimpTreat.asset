@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Shrimp Treat
   itemDescription: A yummy treat!
+  icon: {fileID: 21300000, guid: 15ee701598368634a99a3619877e54a4, type: 3}
   itemPoints: 100
-  icon: {fileID: 21300000, guid: 4a9cc78087c3a0d4ea002b495b7463c9, type: 3}
