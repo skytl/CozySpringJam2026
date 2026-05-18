@@ -97,7 +97,6 @@ public class Player : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpPressed = false;
             jumpReleased = false;
-            Debug.Log("Yer grounded!");
         }
         if (jumpReleased)
         {
@@ -137,7 +136,6 @@ public class Player : MonoBehaviour
         if(rb.linearVelocity.y < -0.1f) // falling
         {
             rb.gravityScale = fallGravity;
-            Debug.Log("Faaaaaaalling!");
         }
         else if(rb.linearVelocity.y > 0.1f) // rising
         {
