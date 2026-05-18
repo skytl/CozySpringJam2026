@@ -23,17 +23,23 @@ public class InsideTeleporterBox : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        playerSprite.GetComponent<SpriteRenderer>().color = Color.clear;
+        if (collision.gameObject.tag == "Player")
+        {
+            playerSprite.GetComponent<SpriteRenderer>().color = Color.clear;
+        }
     }
 
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        playerSprite.GetComponent<SpriteRenderer>().color = Color.white;
-        foreach (Collider2D tpboundary in tpboundaryColliders)
+        if (collision.gameObject.tag == "Player")
         {
-            tpboundary.enabled = false;
+            playerSprite.GetComponent<SpriteRenderer>().color = Color.white;
+            foreach (Collider2D tpboundary in tpboundaryColliders)
+            {
+                tpboundary.enabled = false;
+            }
         }
     }
 }

@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
 
 
 
+    // Note to self: you can remove this now, if you want. I've scrapped this concept
     private void HandleShiftReality()
     {
         if (shiftPressed)

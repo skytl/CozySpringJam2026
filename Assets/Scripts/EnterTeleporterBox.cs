@@ -27,11 +27,14 @@ public class EnterTeleporterBox : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        foreach (Collider2D tpbox in tpboxColliders)
+        if (collision.gameObject.tag == "Player")
         {
-            tpbox.isTrigger = false;
+            foreach (Collider2D tpbox in tpboxColliders)
+            {
+                tpbox.isTrigger = false;
+            }
+
+            playerSprite.GetComponent<SpriteRenderer>().sortingOrder = originalLayerOrder;
         }
-        
-        playerSprite.GetComponent<SpriteRenderer>().sortingOrder = originalLayerOrder;
     }
 }
