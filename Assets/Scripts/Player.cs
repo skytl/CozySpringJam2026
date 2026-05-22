@@ -50,6 +50,13 @@ public class Player : MonoBehaviour
     private bool isGrounded;
 
 
+    [Header("Wall Check")]
+    public Transform wallCheck;
+    public float wallCheckRadius; 
+    public Vector2 wallCheckVol = new Vector2(.5f, .05f);
+    public LayerMask wallLayer;
+    private bool isClimbing;
+
 
 
     private void Start()
@@ -75,7 +82,7 @@ public class Player : MonoBehaviour
         CheckGrounded();
         HandleMovement();
         HandleJump();
-        HandleShiftReality();
+        // HandleShiftReality();
     }
 
 
@@ -109,7 +116,7 @@ public class Player : MonoBehaviour
     }
 
 
-
+    /*
     // Note to self: you can remove this now, if you want. I've scrapped this concept
     private void HandleShiftReality()
     {
@@ -127,6 +134,7 @@ public class Player : MonoBehaviour
             shiftReleased = false;
         }
     }
+    */
 
 
 
@@ -211,7 +219,7 @@ public class Player : MonoBehaviour
     }
 
 
-
+    /*
     public void OnShiftReality(InputValue value)
     {
         if (value.isPressed)
@@ -226,6 +234,7 @@ public class Player : MonoBehaviour
         }
 
     }
+    */
 
 
 
@@ -233,5 +242,6 @@ public class Player : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        Gizmos.DrawWireCube(wallCheck.position, wallCheckVol);
     }
 }
