@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     public float wallCheckRadius; 
     public Vector2 wallCheckVol = new Vector2(.5f, .05f);
     public LayerMask wallLayer;
-    private bool isClimbing;
+    private bool isWallConnected;
 
 
 
@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
         CheckGrounded();
         HandleMovement();
         HandleJump();
+        CheckWallConnected();
     }
 
 
@@ -128,6 +129,19 @@ public class Player : MonoBehaviour
     void CheckGrounded()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        //Debug.Log(isGrounded.ToString());
+    }
+
+
+    void CheckWallConnected()
+    {
+        isWallConnected = Physics2D.OverlapBox(wallCheck.position, wallCheckVol, wallLayer);
+        // isClimbing...
+
+
+        Debug.Log(isWallConnected.ToString());
+
     }
 
 

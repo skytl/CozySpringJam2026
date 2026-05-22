@@ -13,7 +13,6 @@ public class NuzzleDoggo : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("Testing?");
             srCringe.enabled = false;
             srHappy.enabled = true;
         }
