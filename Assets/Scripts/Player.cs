@@ -5,18 +5,10 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    /* #1, set a boolean, that tracks whether JungleMode is false or true (default is false);
-     * when playerInput == shift key, set JungleMode to true;
-     * 
-     */
-
-
     /* Known Bug: every other jump, the player enters Idle anim, during the jump. Haven't been able to figure out the cause, yet */
 
     // EXPERIMENTING!!
-    //public ItemSO itemSO;
     public SpriteRenderer sr;
-    // public int sortingOrder;
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -82,7 +74,6 @@ public class Player : MonoBehaviour
         CheckGrounded();
         HandleMovement();
         HandleJump();
-        // HandleShiftReality();
     }
 
 
@@ -114,29 +105,6 @@ public class Player : MonoBehaviour
             jumpReleased = false;
         }
     }
-
-
-    /*
-    // Note to self: you can remove this now, if you want. I've scrapped this concept
-    private void HandleShiftReality()
-    {
-        if (shiftPressed)
-        {
-            sr.enabled = false;
-
-            Debug.Log("Yo, this is trippy!");
-            shiftPressed = false;
-            shiftReleased = false;
-        }
-        if (shiftReleased)
-        {
-            Debug.Log("Meh, I've seen this before.");
-            shiftReleased = false;
-        }
-    }
-    */
-
-
 
 
     void ApplyVariableGravity()
@@ -217,25 +185,6 @@ public class Player : MonoBehaviour
         }
 
     }
-
-
-    /*
-    public void OnShiftReality(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            shiftPressed = true;
-            shiftReleased = false;
-        }
-        else
-        {
-            shiftReleased = true;
-
-        }
-
-    }
-    */
-
 
 
     private void OnDrawGizmosSelected()

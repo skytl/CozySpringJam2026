@@ -8435,7 +8435,7 @@ MonoBehaviour:
     m_Bits: 64
   wallCheck: {fileID: 2055388163}
   wallCheckRadius: 0.1
-  wallCheckVol: {x: 1, y: 0.8}
+  wallCheckVol: {x: 0.25, y: 1}
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -12983,7 +12983,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 23
-      m_TileSpriteIndex: 20
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -13784,9 +13784,6 @@ Tilemap:
   - serializedVersion: 2
     m_RefCount: 2
     m_Data: {fileID: 1868092425, guid: 0c7c85c2f9a776e4d9d35089c72b9021, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 1
-    m_Data: {fileID: 226870904}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 76
@@ -20680,7 +20677,7 @@ Transform:
   m_GameObject: {fileID: 2055388162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.246, y: 0.259, z: 0}
+  m_LocalPosition: {x: 0.756, y: 0.438, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
