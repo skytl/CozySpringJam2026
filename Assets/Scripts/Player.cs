@@ -7,9 +7,6 @@ public class Player : MonoBehaviour
 {
     /* Known Bug: every other jump, the player enters Idle anim, during the jump. Haven't been able to figure out the cause, yet */
 
-    // EXPERIMENTING!!
-    //public SpriteRenderer sr;
-
     [Header("Components")]
     public Rigidbody2D rb;
     public PlayerInput playerInput;
@@ -41,14 +38,12 @@ public class Player : MonoBehaviour
     private bool isGrounded;
 
 
-    /*
     [Header("Wall Check")]
     public Transform wallCheck;
-    // public float wallCheckRadius; 
-    public Vector2 wallCheckVol = new Vector2(.5f, .05f);
+    public Vector2 wallCheckVolume = new Vector2(.5f, .05f);
     public LayerMask wallLayer;
-    private bool isWallConnected;
-    */
+    private bool isClimbing;
+    
 
 
     private void Start()
@@ -70,7 +65,8 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        ApplyVariableGravity();
+        /* Temporarily disabling ApplyVariableGravity, since it's messing with my Climb script*/
+        // ApplyVariableGravity();
         CheckGrounded();
         HandleMovement();
         HandleJump();
@@ -82,8 +78,16 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        float targetSpeed = moveInput.x * speed;
-        rb.linearVelocity = new Vector2(targetSpeed, rb.linearVelocity.y);
+        if (isClimbing == true)
+        {
+            float targetClimb = moveInput.y * speed;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, targetClimb);
+        }
+        else
+        {
+            float targetSpeed = moveInput.x * speed;
+            rb.linearVelocity = new Vector2(targetSpeed, rb.linearVelocity.y);
+        }
     }
 
 
@@ -110,17 +114,24 @@ public class Player : MonoBehaviour
 
     void ApplyVariableGravity()
     {
-        if(rb.linearVelocity.y < -0.1f) // falling
+        if (isClimbing == true) // climbing
         {
-            rb.gravityScale = fallGravity;
+            rb.gravityScale = 0;
         }
-        else if(rb.linearVelocity.y > 0.1f) // rising
+        else if (isClimbing == false)
         {
-            rb.gravityScale = jumpGravity;
-        }
-        else
-        {
-            rb.gravityScale = normalGravity;
+            if (rb.linearVelocity.y < -0.1f) // falling
+            {
+                rb.gravityScale = fallGravity;
+            }
+            else if (rb.linearVelocity.y > 0.1f) // rising
+            {
+                rb.gravityScale = jumpGravity;
+            }
+            else
+            {
+                rb.gravityScale = normalGravity;
+            }
         }
     }
 
@@ -178,6 +189,12 @@ public class Player : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        Debug.Log($"Move Input: {moveInput.y}");
+
+        if(moveInput.y == 1)
+        {
+            isClimbing = true;
+        }
     }
 
 

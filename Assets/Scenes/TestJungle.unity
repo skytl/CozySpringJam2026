@@ -356,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 455673208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.246, y: 0.259, z: 0}
+  m_LocalPosition: {x: 0.085, y: 0.063, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -541,7 +541,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.7753, y: -2.1124897, z: -10}
+  m_LocalPosition: {x: 32.6353, y: 0.6175102, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1718,7 +1718,6 @@ GameObject:
   - component: {fileID: 1143381088}
   - component: {fileID: 1143381091}
   - component: {fileID: 1143381090}
-  - component: {fileID: 1143381092}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1735,7 +1734,7 @@ Transform:
   m_GameObject: {fileID: 1143381086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.21, y: -2.73, z: 0}
+  m_LocalPosition: {x: 26.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1778,8 +1777,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.25069475, y: 0.44328773}
-  m_Size: {x: 0.9963026, y: 1.2661307}
+  m_Offset: {x: 0.1219427, y: 0.23235346}
+  m_Size: {x: 0.9963027, y: 1.2442155}
   m_Direction: 0
 --- !u!50 &1143381089
 Rigidbody2D:
@@ -1865,21 +1864,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1143381092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143381086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ff83eb2691c6040b1efeaf7ee8eaab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Climb
-  verticalMvmt: 10
-  speed: 8
-  rb: {fileID: 1143381089}
 --- !u!1 &1144286223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4872,7 +4856,7 @@ Transform:
   m_GameObject: {fileID: 1569514173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.81, z: 0}
+  m_LocalPosition: {x: -0.13, y: 0.607, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5626,7 +5610,7 @@ Transform:
   m_GameObject: {fileID: 1894170062}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.7753, y: -2.1124897, z: -10}
+  m_LocalPosition: {x: 32.6353, y: 0.6175102, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5886,7 +5870,7 @@ Transform:
   m_GameObject: {fileID: 2055388162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.739, y: 0.432, z: 0}
+  m_LocalPosition: {x: 0.488, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
