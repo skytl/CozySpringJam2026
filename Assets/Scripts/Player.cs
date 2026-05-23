@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     /* Known Bug: every other jump, the player enters Idle anim, during the jump. Haven't been able to figure out the cause, yet */
 
     // EXPERIMENTING!!
-    public SpriteRenderer sr;
+    //public SpriteRenderer sr;
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -41,13 +41,14 @@ public class Player : MonoBehaviour
     private bool isGrounded;
 
 
+    /*
     [Header("Wall Check")]
     public Transform wallCheck;
     // public float wallCheckRadius; 
     public Vector2 wallCheckVol = new Vector2(.5f, .05f);
     public LayerMask wallLayer;
     private bool isWallConnected;
-
+    */
 
 
     private void Start()
@@ -73,7 +74,7 @@ public class Player : MonoBehaviour
         CheckGrounded();
         HandleMovement();
         HandleJump();
-        CheckWallConnected();
+        // CheckWallConnected();
     }
 
 
@@ -131,12 +132,14 @@ public class Player : MonoBehaviour
     }
 
 
+    /*
     void CheckWallConnected()
     {
         // isWallConnected = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, wallLayer);
         isWallConnected = Physics2D.OverlapBox(wallCheck.position, wallCheckVol, wallLayer);
         // isClimbing...
     }
+    */
 
 
 
@@ -199,6 +202,6 @@ public class Player : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        Gizmos.DrawWireCube(wallCheck.position, wallCheckVol);
+        // Gizmos.DrawWireCube(wallCheck.position, wallCheckVol);
     }
 }
