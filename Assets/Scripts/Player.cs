@@ -29,7 +29,11 @@ public class Player : MonoBehaviour
     private bool jumpPressed;
     private bool jumpReleased;
 
+    private float coyoteTime = .2f;
+    private float coyoteTimeCounter;
 
+    private float jumpBuffer = .2f;
+    private float jumpBufferCounter;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -38,7 +42,7 @@ public class Player : MonoBehaviour
     private bool isGrounded;
 
 
-    [Header("Wall Check")]
+    [Header("Climb Check")]
     public Collider2D climbableVolume;
     private bool isClimbable = false;
     private bool isClimbing = false;
@@ -52,11 +56,20 @@ public class Player : MonoBehaviour
 
 
 
-
     private void Update()
     {
         Flip();
         HandleAnimations();
+
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
     }
 
 
@@ -92,11 +105,17 @@ public class Player : MonoBehaviour
 
     private void HandleJump()
     {
-        if (jumpPressed && isGrounded)
+        if (jumpPressed)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            jumpPressed = false;
-            jumpReleased = false;
+            jumpBufferCounter = jumpBuffer;
+
+            if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                jumpPressed = false;
+                jumpReleased = false;
+                jumpBufferCounter = 0f;
+            }
         }
         if (jumpReleased)
         {
@@ -104,7 +123,10 @@ public class Player : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
             }
+
             jumpReleased = false;
+            coyoteTimeCounter = 0f;
+            jumpBufferCounter -= Time.deltaTime;
         }
     }
 
