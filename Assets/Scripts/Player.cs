@@ -166,8 +166,10 @@ public class Player : MonoBehaviour
 
     void HandleAnimations()
     {
-        anim.SetBool("isJumping", rb.linearVelocity.y > .1f);
+        anim.SetBool("isJumping", rb.linearVelocity.y > .1f && !isClimbing);
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isClimbing", rb.linearVelocity.y > .1f || rb.linearVelocity.y < -.1f && isClimbing);
+        anim.SetBool("isHanging", rb.linearVelocity.y == 0f && isClimbing);
 
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
 
