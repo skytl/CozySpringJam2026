@@ -39,10 +39,12 @@ public class Player : MonoBehaviour
 
 
     [Header("Wall Check")]
-    public Transform wallCheck;
-    public Vector2 wallCheckVolume = new Vector2(.5f, .05f);
-    public LayerMask wallLayer;
-    private bool isClimbing;
+    //public Transform wallCheck;
+    //public Vector2 wallCheckVolume = new Vector2(.5f, .05f);
+    // public LayerMask climbLayer;
+    public Collider2D climbableVolume;
+    private bool isClimbable = false;
+    private bool isClimbing = false;
     
 
 
@@ -66,11 +68,11 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         /* Temporarily disabling ApplyVariableGravity, since it's messing with my Climb script*/
-        // ApplyVariableGravity();
+        ApplyVariableGravity();
         CheckGrounded();
         HandleMovement();
         HandleJump();
-        // CheckWallConnected();
+        //CheckInClimbVolume();
     }
 
 
@@ -81,7 +83,7 @@ public class Player : MonoBehaviour
         if (isClimbing == true)
         {
             float targetClimb = moveInput.y * speed;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, targetClimb);
+            rb.linearVelocity = new Vector2(0, targetClimb);
         }
         else
         {
@@ -114,7 +116,7 @@ public class Player : MonoBehaviour
 
     void ApplyVariableGravity()
     {
-        if (isClimbing == true) // climbing
+        if (isClimbable == true && isClimbing == true) // climbing
         {
             rb.gravityScale = 0;
         }
@@ -123,14 +125,17 @@ public class Player : MonoBehaviour
             if (rb.linearVelocity.y < -0.1f) // falling
             {
                 rb.gravityScale = fallGravity;
+                Debug.Log("FAAAAALL");
             }
             else if (rb.linearVelocity.y > 0.1f) // rising
             {
                 rb.gravityScale = jumpGravity;
+                Debug.Log("up up and away");
             }
             else
             {
                 rb.gravityScale = normalGravity;
+                Debug.Log("normal");
             }
         }
     }
@@ -142,15 +147,6 @@ public class Player : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
-
-    /*
-    void CheckWallConnected()
-    {
-        // isWallConnected = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, wallLayer);
-        isWallConnected = Physics2D.OverlapBox(wallCheck.position, wallCheckVol, wallLayer);
-        // isClimbing...
-    }
-    */
 
 
 
@@ -184,18 +180,24 @@ public class Player : MonoBehaviour
 
 
 
-
-
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
         Debug.Log($"Move Input: {moveInput.y}");
 
-        if(moveInput.y == 1)
+        if (isClimbable == true && moveInput.y == 1)
         {
             isClimbing = true;
+            Debug.Log("I've started climbing");
+        }
+
+        if (isClimbing == true && moveInput.x >= .1f || moveInput.x < -.1f)
+        {
+            isClimbing = false;
+            Debug.Log("I've started climbing");
         }
     }
+
 
 
 
@@ -205,20 +207,45 @@ public class Player : MonoBehaviour
         {
             jumpPressed = true;
             jumpReleased = false;
+            isClimbing = false;
         }
         else
         {
             jumpReleased = true;
-
         }
-
     }
+
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == climbableVolume)
+        {
+            isClimbable = true;
+        }
+    }
+
+
+
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision == climbableVolume)
+        {
+            isClimbable=false;
+            isClimbing=false;
+            Debug.Log("Now leaving the facility");
+        }
+    }
+
 
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        // Gizmos.DrawWireCube(wallCheck.position, wallCheckVol);
     }
 }
