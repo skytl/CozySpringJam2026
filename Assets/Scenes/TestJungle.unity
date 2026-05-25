@@ -5944,6 +5944,7 @@ MonoBehaviour:
   rb: {fileID: 1352367414}
   brokenGlass: {fileID: 21300000, guid: 33af5807c376132458e835fbdef2c9b2, type: 3}
   glassPosition: {x: 0, y: 0}
+  glassCollider: {fileID: 1352367413}
   groundCheck: {fileID: 494831257}
   groundCheckRadius: 0.7
   groundLayer:

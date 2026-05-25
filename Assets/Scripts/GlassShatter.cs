@@ -13,7 +13,7 @@ public class GlassShatter : MonoBehaviour
     public Vector2 glassPosition;
     bool isBroken = false;
 
-    //public BoxCollider2D glassCollider;
+    public BoxCollider2D glassCollider;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -48,13 +48,12 @@ public class GlassShatter : MonoBehaviour
             glassPosition = rb.position;
             rb.SetRotation(0);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            // glassCollider.isTrigger = true;
             // rb.MovePosition(glassPosition);
-            // rb.constraints = RigidbodyConstraints2D.FreezePositionX;
-            // rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            glassCollider.isTrigger = true;
             sr.sprite = brokenGlass;
             isBroken = true;
-            // rb.bodyType = RigidbodyType2D.Static;
         }
     }
 
