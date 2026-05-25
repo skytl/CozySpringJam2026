@@ -14622,9 +14622,6 @@ Tilemap:
   - serializedVersion: 2
     m_RefCount: 2
     m_Data: {fileID: 1868092425, guid: 0c7c85c2f9a776e4d9d35089c72b9021, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
-    m_Data: {fileID: 226870904}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 76
