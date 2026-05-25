@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GlassShatter : MonoBehaviour
 {
-    // NOTE: need to set script to cause destruction for only the glass that actually fell! :P
-    // So, you need a Wineglass game object...
-    // public Collider2D[] tpboxColliders;
     public GameObject[] wineGlasses;
 
     public SpriteRenderer sr;
@@ -29,7 +26,6 @@ public class GlassShatter : MonoBehaviour
     {
         foreach(GameObject wholeGlass in wineGlasses)
         {
-            Debug.Log($"well, it got called {wholeGlass}");
             if (wholeGlass != isBroken)
             {
                 CheckGrounded();
@@ -47,9 +43,9 @@ public class GlassShatter : MonoBehaviour
 
         if (willBreak && isGrounded)
         {
-            // note to self: whenever you get around to rewriting this script, have it set a 
-            // fall timer instead. If it doesn't fall very far, or, if it lands on something soft
-            // like a cushion, it should be intact after landing.
+            /* note to self: whenever you get around to rewriting this script, have it set a 
+            fall timer instead. If it doesn't fall very far, or, if it lands on something soft
+            like a cushion, it should be intact after landing. */
             glassPosition = rb.position;
             rb.SetRotation(0);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;

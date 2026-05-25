@@ -8,7 +8,7 @@ public class Loot : MonoBehaviour
     public SpriteRenderer sr;
     public Animator anim;
 
-    public int quantity;
+    // public int quantity;
 
 
     private void OnValidate()
