@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GlassShatter : MonoBehaviour
 {
-    public GameObject[] wineGlasses;
+    public GameObject[] wineGlassID;
 
     public SpriteRenderer sr;
     public Rigidbody2D rb;
     public Sprite brokenGlass;
     private bool willBreak = false;
-    private Vector2 glassPosition;
+    // private Vector2 glassPosition;
     bool isBroken = false;
 
     public BoxCollider2D glassCollider;
@@ -22,17 +22,23 @@ public class GlassShatter : MonoBehaviour
     private bool isGrounded;
 
 
+
+
+
     private void Update()
     {
-        foreach(GameObject wholeGlass in wineGlasses)
+        foreach(GameObject wineGlass in wineGlassID)
         {
-            if (wholeGlass != isBroken)
+            if (wineGlass != isBroken)
             {
                 CheckGrounded();
                 CheckFallDistance();
             }
         }
     }
+
+
+
 
 
 
@@ -46,7 +52,7 @@ public class GlassShatter : MonoBehaviour
             /* note to self: whenever you get around to rewriting this script, have it set a 
             fall timer instead. If it doesn't fall very far, or, if it lands on something soft
             like a cushion, it should be intact after landing. */
-            glassPosition = rb.position;
+            // glassPosition = rb.position;
             rb.SetRotation(0);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             // rb.MovePosition(glassPosition);

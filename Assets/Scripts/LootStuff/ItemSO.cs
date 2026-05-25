@@ -8,8 +8,4 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public string itemDescription;
     public Sprite icon;
-
-    [Header("Stats")]
-    public int itemPoints;
-
 }
