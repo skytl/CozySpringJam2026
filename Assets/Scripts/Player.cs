@@ -46,7 +46,10 @@ public class Player : MonoBehaviour
     public Collider2D climbableVolume;
     private bool isClimbable = false;
     private bool isClimbing = false;
-    
+
+
+    private LayerMask checkLayer;
+    public LayerMask cushionLayer;
 
 
     private void Start()
@@ -158,7 +161,8 @@ public class Player : MonoBehaviour
 
     void CheckGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, cushionLayer);
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
 
