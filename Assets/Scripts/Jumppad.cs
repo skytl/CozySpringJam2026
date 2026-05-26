@@ -4,7 +4,7 @@ public class Jumppad : MonoBehaviour
 {
     public float bounce = 20f;
     //public float cushionBounce = 10f;
-    public int cushionVelocityReduction = 2;
+    public int cushionVelocityReduction = 2; // set this back to two, once you find a way to reset the velocity
     public Rigidbody2D jumppadRb;
 
     private void OnCollisionEnter2D(Collision2D collision)
