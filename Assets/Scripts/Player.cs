@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public PlayerInput playerInput;
     public Animator anim;
-
+    public CapsuleCollider2D playerCollider;
 
     [Header("Movement Variables")]
     public float speed;
@@ -41,6 +41,9 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     private bool isGrounded;
 
+    private bool isOnPlatform;
+    public float dropThruTime = .25f;
+
 
     [Header("Climb Check")]
     public Collider2D climbableVolume;
@@ -55,6 +58,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb.gravityScale = normalGravity;
+        playerCollider = GetComponent<CapsuleCollider2D>();
     }
 
 
@@ -100,6 +104,47 @@ public class Player : MonoBehaviour
         {
             float targetSpeed = moveInput.x * speed;
             rb.linearVelocity = new Vector2(targetSpeed, rb.linearVelocity.y);
+        }
+    }
+
+
+
+    // dropdown through platforms
+    public void Dropdown(InputAction.CallbackContext context)
+    {
+        Debug.Log($"Context performed: {context.performed}");
+        if(context.performed && isGrounded && isOnPlatform && playerCollider.enabled)
+        {
+            // the input action callback context isn't functioning. Need to figure out how to do that
+            // THIS IS NOT GETTING CALLED!
+            Debug.Log("Calling the dropdown method");
+            StartCoroutine(DisablePlayerCollider(dropThruTime));
+        }
+    }
+
+
+    private IEnumerator DisablePlayerCollider(float disableTime)
+    {
+        playerCollider.enabled = false;
+        yield return new WaitForSeconds(disableTime);
+        playerCollider.enabled = true;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            isOnPlatform = true;
+        }
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            isOnPlatform = false;
         }
     }
 
