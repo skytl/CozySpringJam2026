@@ -112,12 +112,8 @@ public class Player : MonoBehaviour
     // dropdown through platforms
     private void OnDropdown()
     {
-        //Debug.Log($"Context performed: {context.performed}");
         if (isGrounded && isOnPlatform && playerCollider.enabled)
         {
-            // the input action callback context isn't functioning. Need to figure out how to do that
-            // THIS IS NOT GETTING CALLED!
-            Debug.Log("Calling the dropdown method");
             StartCoroutine(DisablePlayerCollider(dropThruTime));
         }
     }

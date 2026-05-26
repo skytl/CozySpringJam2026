@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Climbable
   - Platform
+  - StaticTerrain
   layers:
   - Default
   - TransparentFX
