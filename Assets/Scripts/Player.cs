@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     private bool isClimbing = false;
 
 
-    private LayerMask checkLayer;
+    // private LayerMask checkLayer;
     public LayerMask cushionLayer;
 
 
@@ -110,41 +110,15 @@ public class Player : MonoBehaviour
 
 
     // dropdown through platforms
-    public void Dropdown(InputAction.CallbackContext context)
+    private void OnDropdown()
     {
-        Debug.Log($"Context performed: {context.performed}");
-        if(context.performed && isGrounded && isOnPlatform && playerCollider.enabled)
+        //Debug.Log($"Context performed: {context.performed}");
+        if (isGrounded && isOnPlatform && playerCollider.enabled)
         {
             // the input action callback context isn't functioning. Need to figure out how to do that
             // THIS IS NOT GETTING CALLED!
             Debug.Log("Calling the dropdown method");
             StartCoroutine(DisablePlayerCollider(dropThruTime));
-        }
-    }
-
-
-    private IEnumerator DisablePlayerCollider(float disableTime)
-    {
-        playerCollider.enabled = false;
-        yield return new WaitForSeconds(disableTime);
-        playerCollider.enabled = true;
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            isOnPlatform = true;
-        }
-    }
-
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            isOnPlatform = false;
         }
     }
 
@@ -175,6 +149,33 @@ public class Player : MonoBehaviour
             jumpReleased = false;
             coyoteTimeCounter = 0f;
             jumpBufferCounter -= Time.deltaTime;
+        }
+    }
+
+
+
+    private IEnumerator DisablePlayerCollider(float disableTime)
+    {
+        playerCollider.enabled = false;
+        yield return new WaitForSeconds(disableTime);
+        playerCollider.enabled = true;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            isOnPlatform = true;
+        }
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            isOnPlatform = false;
         }
     }
 
