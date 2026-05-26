@@ -180,4 +180,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jumppad
   bounce: 30
+  cushionBounce: 10
   jumppadRb: {fileID: 2747939309497389807}
