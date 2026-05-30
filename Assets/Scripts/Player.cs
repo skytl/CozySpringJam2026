@@ -115,6 +115,7 @@ public class Player : MonoBehaviour
         if (isGrounded && isOnPlatform && playerCollider.enabled)
         {
             StartCoroutine(DisablePlayerCollider(dropThruTime));
+            Debug.Log("Calling coroutine to drop through platform");
         }
     }
 
@@ -152,6 +153,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator DisablePlayerCollider(float disableTime)
     {
+        Debug.Log($"disableTime is set to: {disableTime}");
         playerCollider.enabled = false;
         yield return new WaitForSeconds(disableTime);
         playerCollider.enabled = true;
@@ -255,6 +257,11 @@ public class Player : MonoBehaviour
         if (isClimbing == true && moveInput.x >= .1f || moveInput.x < -.1f)
         {
             isClimbing = false;
+        }
+
+        if(moveInput.y == -1)
+        {
+            OnDropdown();
         }
     }
 

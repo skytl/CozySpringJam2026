@@ -8669,7 +8669,7 @@ MonoBehaviour:
   climbableVolume: {fileID: 2023180156}
   cushionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!114 &1320568411
 MonoBehaviour:
   m_ObjectHideFlags: 0
