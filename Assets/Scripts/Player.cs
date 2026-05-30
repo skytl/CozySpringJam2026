@@ -115,7 +115,6 @@ public class Player : MonoBehaviour
         if (isGrounded && isOnPlatform && playerCollider.enabled)
         {
             StartCoroutine(DisablePlayerCollider(dropThruTime));
-            Debug.Log("Calling coroutine to drop through platform");
         }
     }
 
@@ -153,7 +152,6 @@ public class Player : MonoBehaviour
 
     private IEnumerator DisablePlayerCollider(float disableTime)
     {
-        Debug.Log($"disableTime is set to: {disableTime}");
         playerCollider.enabled = false;
         yield return new WaitForSeconds(disableTime);
         playerCollider.enabled = true;
@@ -205,8 +203,12 @@ public class Player : MonoBehaviour
 
     void CheckGrounded()
     {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, cushionLayer);
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        /* Maybe rethink this cushionLayer functionality a bit? Atm, it's forcing the player to fly up into
+        the air whenever they land on a cushion. It might make more sense to allow the player to walk
+        on cushions if they choose, and just get an extra boost if they jump while standing on a cushion.
+        */
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, cushionLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
 
