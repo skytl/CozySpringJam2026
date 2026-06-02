@@ -45,10 +45,14 @@ public class Player : MonoBehaviour
     public float dropThruTime = .25f;
 
 
-    [Header("Climb Check")]
-    public Collider2D climbableVolume;
+    [Header("Wall Check")]
     private bool isClimbable = false;
     private bool isClimbing = false;
+    public Transform wallCheckPos;
+    public Vector2 wallCheckSize = new Vector2(.5f, .5f);
+    public LayerMask wallLayer;
+    // public Collider2D climbableVolume;
+
 
 
     // private LayerMask checkLayer;
@@ -88,6 +92,7 @@ public class Player : MonoBehaviour
         CheckGrounded();
         HandleMovement();
         HandleJump();
+        //HandleWallJump();
     }
 
 
@@ -207,7 +212,7 @@ public class Player : MonoBehaviour
         the air whenever they land on a cushion. It might make more sense to allow the player to walk
         on cushions if they choose, and just get an extra boost if they jump while standing on a cushion.
         */
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, cushionLayer);
+        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, cushionLayer);
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
@@ -287,7 +292,7 @@ public class Player : MonoBehaviour
 
 
 
-
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == climbableVolume)
@@ -295,11 +300,12 @@ public class Player : MonoBehaviour
             isClimbable = true;
         }
     }
+    */
 
 
 
 
-
+    /*
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision == climbableVolume)
@@ -308,6 +314,7 @@ public class Player : MonoBehaviour
             isClimbing=false;
         }
     }
+    */
 
 
 
@@ -315,5 +322,7 @@ public class Player : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(wallCheckPos.position, wallCheckSize);
     }
 }

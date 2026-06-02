@@ -61,6 +61,7 @@ public class GlassShatter : MonoBehaviour
             glassCollider.isTrigger = true;
             sr.sprite = brokenGlass;
             isBroken = true;
+            Debug.Log("Glass broken - theoretically");
         }
     }
 

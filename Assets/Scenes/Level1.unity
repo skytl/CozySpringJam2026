@@ -9167,6 +9167,7 @@ MonoBehaviour:
   rb: {fileID: 1143381089}
   playerInput: {fileID: 1143381091}
   anim: {fileID: 1569514176}
+  playerCollider: {fileID: 0}
   speed: 7
   jumpForce: 20
   jumpCutMultiplier: 0.5
@@ -9179,6 +9180,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  dropThruTime: 0.25
   climbableVolume: {fileID: 298248227}
   cushionLayer:
     serializedVersion: 2
